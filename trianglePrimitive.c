@@ -45,7 +45,7 @@ void trianglePrimitive(SDL_Renderer* gRenderer, SDL_Point point1, SDL_Point poin
 	double relativeConstE;
 	double relativeConstF;
 			
-	if(vertex1.y < vertex2.y && vertex1.y < vertex3.y)
+	if(vertex1.y <= vertex2.y && vertex1.y < vertex3.y)
 		if(vertex2.y > vertex3.y)
 		{
 			highestY = vertex1.y;

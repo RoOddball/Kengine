@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-void spherePrimitiveByPoints(SDL_Renderer* gRenderer, SDL_Point center, int radius){
+void spherePrimitiveByPoints(SDL_Renderer* gRenderer, SDL_Point center, int radius, int thickness){
 	
 	//int count_between_Ys = 0;
 	int circleY = center.y;
@@ -10,8 +10,9 @@ void spherePrimitiveByPoints(SDL_Renderer* gRenderer, SDL_Point center, int radi
 	int yPosOfCirclePointDown;
 	int yPosOfCirclePointUp;
 	int xPosOfCirclePoint = circleX - radius;
+	int radiusLimit = radius - thickness;
 	
-	int area_of_circle = floor(2.0*pow((double)radius,2.0)*M_PI);
+	int area_of_circle = floor((2.0*pow((double)radius,2.0)*M_PI) - (2.0*pow((double)radiusLimit,2.0)*M_PI));
 	
 	int number_of_inner_circles = radius;
 	int j;
@@ -23,7 +24,7 @@ void spherePrimitiveByPoints(SDL_Renderer* gRenderer, SDL_Point center, int radi
 	SDL_Point* points = (SDL_Point*)(malloc(sizeof(SDL_Point)*area_of_circle));
 	//SDL_Point points[area_of_circle];
 	
-	while(radius>0)
+	while(radius>radiusLimit)
 	{
 		//j = 0;
 		rightX  = circleX + radius;

@@ -6,4 +6,5 @@
 
 void trianglePrimitive(SDL_Renderer*, SDL_Point, SDL_Point, SDL_Point);
 void spherePrimitiveByLines(SDL_Renderer*, SDL_Point, int);
-void spherePrimitiveByPoints(SDL_Renderer*, SDL_Point, int);
+void spherePrimitiveByPoints(SDL_Renderer*, SDL_Point, int, int);
+void quadrilateralPrimitive(SDL_Renderer*, SDL_Point, SDL_Point, SDL_Point, SDL_Point);

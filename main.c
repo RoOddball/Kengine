@@ -94,6 +94,15 @@ int main( int argc, char* args[] )
 		
 		SDL_Point points[30];
 		SDL_Point circleCenter = {300, 300};
+		SDL_Point leftEye = {250, 220};
+		SDL_Point rightEye = {350, 220};
+		SDL_Point yelloZmile = {300, 330};
+		SDL_Point blackZmile = {300, 305};
+		
+		SDL_Point quadrilateralA = {150, 150};
+		SDL_Point quadrilateralB = {450, 150};
+		SDL_Point quadrilateralC = {150, 400};
+		SDL_Point quadrilateralD = {450, 400};
 		
 		srand(time(0));
 		
@@ -127,17 +136,30 @@ int main( int argc, char* args[] )
 			
 
 //triangle test
-
+/*
 			for(int i=0; i<10; i++)
 			{
 				SDL_SetRenderDrawColor(gRenderer, (i%8)*25, 100+(i%7)*10, 100+(i%5)*15, 255);
 				trianglePrimitive(gRenderer, points[i*3], points[i*3+1], points[i*3+2] );
 			}
 			end = clock();
-
+*/
 			
 			//spherePrimitiveByLines(gRenderer, circleCenter, 300);
-			//spherePrimitiveByPoints(gRenderer, circleCenter, 300);
+//zmiley face
+/*
+			spherePrimitiveByPoints(gRenderer, circleCenter, 150, 10);
+			spherePrimitiveByLines(gRenderer, leftEye, 15);
+			spherePrimitiveByLines(gRenderer, rightEye, 15);
+			spherePrimitiveByLines(gRenderer, yelloZmile, 60);
+			
+			SDL_SetRenderDrawColor( gRenderer, 0, 0, 0, 255 );
+			
+			spherePrimitiveByLines(gRenderer, blackZmile, 70);
+*/
+			
+			//quadrilateralPrimitive(gRenderer, quadrilateralA, quadrilateralB, quadrilateralC, quadrilateralD);
+			//trianglePrimitive(gRenderer, quadrilateralA, quadrilateralB, quadrilateralC);
 			
 			end = clock();
 			SDL_RenderPresent( gRenderer );
